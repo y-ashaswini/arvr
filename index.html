@@ -33,6 +33,7 @@
 </head>
 
 <body style="margin : 0px; overflow: hidden;">
+    <!-- minimal loader shown until image descriptors are loaded. Loading may take a while according to the device computational power -->
     <div class="arjs-loader">
         <div>Loading, please wait...</div>
     </div>
@@ -40,53 +41,20 @@
     <!-- a-frame scene -->
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
-        <a-assets>
-            <img id="nft_response"
-                src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sOYMdk4s5UfvyYCWlpduioZZ/user-5ZcsOdbHdmL9qr7yfAmTMZTd/img-4vN55Q2l7bEkbPLCHoAvYWZD.png?st=2023-01-14T06%3A50%3A34Z&se=2023-01-14T08%3A50%3A34Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-01-14T02%3A30%3A09Z&ske=2023-01-15T02%3A30%3A09Z&sks=b&skv=2021-08-06&sig=ZM8MLL1Rr38PitaoHLc/bgB%2BxG%2B2YZ%2B4OGiQJar3uo4%3D">
-        </a-assets>
-        <a-entity id="camera" position="0 1.6 0" camera look-controls wasd-controls>
-            <a-entity cursor="rayOrigin: mouse"></a-entity>
-        </a-entity>
-        <a-entity id="nft_response_dispaly" class="homeworld" position="0 3 -14.9">
-            <a-plane id="picassoframe" color="#191817" width="3" height="4"></a-plane>
-            <a-plane id="picassopainting" src="#nft_response" position="0 0 .1" width="2.5" height="3.5"></a-plane>
-            <a-plane id="picassocaption" position="3.5 -1 .01" height=".6" width="auto" color="#191817"
-                text="value: Pablo Picasso: Woman With a Mandolin. 1909; width: 3; align: center"></a-plane>
-        </a-entity>
-        <!-- <a-nft type="nft" url="bluehalo" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5"> -->
-        <!-- <a-entity
+        <!-- a-nft is the anchor that defines an Image Tracking entity -->
+        <!-- on 'url' use the path to the Image Descriptors created before. -->
+        <!-- the path should end with the name without the extension e.g. if file is trex.fset' the path should end with trex -->
+        <a-nft type="nft" url="/Assets" smooth="true" smoothCount="10" smoothTolerance=".01"
+            smoothThreshold="5">
+            <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
+            <a-entity
                 gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
                 scale="5 5 5" position="100 100 0">
-            </a-entity> -->
-        <!-- <a-asset-item id="img"
-                src="/bluehalo.iset"
-                response-type="arraybuffer"></a-asset-item> -->
-        <!-- </a-nft>
-        <a-entity camera></a-entity> -->
+            </a-entity>
+        </a-nft>
+        <!-- static camera that moves according to the device movemenents -->
+        <a-entity camera></a-entity>
     </a-scene>
 </body>
-
-</html>
-
-
-<!-- <!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Location-based AR.js demo</title>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-</head>
-
-<body style="margin: 0; overflow: hidden;">
-    <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; debugUIEnabled: false;">
-        <a-text value="This content will always face you." look-at="[gps-camera]" scale="50 50 50"
-            gps-entity-place="latitude: 10.821050; longitude: 78.289810;"></a-text>
-        <a-camera gps-camera rotation-reader> </a-camera>
-    </a-scene>
-</body> -->
 
 </html>
