@@ -1,0 +1,16 @@
+<html>
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+<body style='margin : 0px; overflow: hidden;'>
+    <a-scene embedded arjs='sourceType: webcam;'>
+        <a-assets>
+            <img id="capy" src="https://i.natgeofe.com/n/566ed88f-7ee4-4a57-be2e-aa312a5f65a1/capybara.jpg" />
+        </a-assets>
+        <a-entity position="0 3 -14.9">
+            <a-plane id="picassopainting" src="#capy" position="0 0 .1" width="2.5" height="3.5"></a-plane>
+        </a-entity>
+    </a-scene>
+</body>
+</html>

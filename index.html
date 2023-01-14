@@ -3,16 +3,16 @@
 <head>
     <script src="https://aframe.io/releases/0.8.2/aframe.min.js"> </script>
     <script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js"></script>
-    <script src="public/js/sphereexpand.js"></script>
-    <script src="public/js/backhome.js"></script>
-    <script src="public/js/examplefunctions.js"></script>
+    <!-- <script src="public/js/sphereexpand.js"></script> -->
+    <!-- <script src="public/js/backhome.js"></script> -->
+    <!-- <script src="public/js/examplefunctions.js"></script> -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 </head>
 
 <body>
 
     <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam;">
         <a-camera gps-camera rotation-reader></a-camera>
-
         <a-assets>
             <img id="picasso"
                 src="https://cdn.glitch.com/f2ee9d74-9726-4bed-9c30-2d49d6391dee%2FPablo_Picasso_-_Womanwith_a_Mandolin_-_Ermitage%20(1).jpg?1547166417213">
@@ -21,9 +21,9 @@
             <a-entity cursor="rayOrigin: mouse"></a-entity>
         </a-entity>
 
-        <a-entity laser-controls="hand:right"></a-entity>
+        <!-- <a-entity laser-controls="hand:right"></a-entity> -->
 
-        <a-entity id="picassodisplay" class="homeworld" position="0 3 -14.9">
+        <a-entity position="0 3 -14.9">
             <a-plane id="picassopainting" src="#picasso" position="0 0 .1" width="2.5" height="3.5"></a-plane>
         </a-entity>
 
