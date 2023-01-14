@@ -10,7 +10,8 @@
 
 <body>
 
-    <a-scene embedded arjs="sourceType: webcam;">
+    <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam;">
+        <a-camera gps-camera rotation-reader></a-camera>
 
         <a-assets>
             <img id="picasso"
@@ -25,7 +26,7 @@
         <a-entity id="picassodisplay" class="homeworld" position="0 3 -14.9">
             <a-plane id="picassopainting" src="#picasso" position="0 0 .1" width="2.5" height="3.5"></a-plane>
         </a-entity>
-        <a-camera gps-camera rotation-reader> </a-camera>
+
     </a-scene>
 
 </body>
