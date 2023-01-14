@@ -12,7 +12,13 @@
 <body>
 
     <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam;">
-        <a-camera gps-camera rotation-reader></a-camera>
+        <!-- <a-camera gps-camera rotation-reader></a-camera> -->
+        <a-camera>
+            <a-cursor id="cursor"
+                animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
+                animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click"
+                animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing"></a-cursor>
+        </a-camera>
         <a-assets>
             <img id="picasso"
                 src="https://cdn.glitch.com/f2ee9d74-9726-4bed-9c30-2d49d6391dee%2FPablo_Picasso_-_Womanwith_a_Mandolin_-_Ermitage%20(1).jpg?1547166417213">
