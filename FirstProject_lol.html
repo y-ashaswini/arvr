@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"> </script>
+</head>
+
+<body>
+    <a-scene>
+        <!-- <a-sky color=" #63E7FF">the sky, as a color</a-sky> -->
+        <!-- <a-sky src="./Assets/night.png">the sky, needs to be a photosphere</a-sky> -->
+        <a-sky src="">the sky</a-sky>
+
+        <a-sky src="https://cdn.glitch.com/7e18fbf8-9686-4cf7-91f9-4a6bbdb54f5e%2Fsky.jpg?1544174075054">the sky</a-sky>
+        <!-- <a-plane position="0 0 0" rotation="-90 0 0" color="green" scale="10 10 10">ground</a-plane> -->
+
+        <a-gltf-model id="statue" position="-3.5 0 -3.5" rotation="0 15 0" scale=".02 .02 .02"
+            src="https://cdn.glitch.com/7e18fbf8-9686-4cf7-91f9-4a6bbdb54f5e%2Fstatue.glb?1544169724449">statue</a-gltf-model>
+        <a-plane position="0 0 0" rotation="-90 0 0" src="./Assets/grass.png" scale="10 10 10">ground</a-plane>
+        <a-plane position="0 0.5 -5" color="#643200" scale="10 1 10">inner side of front fence</a-plane>
+        <a-plane position="5 0.5 0" color="#643200" scale="10 1 10" rotation="0 -90 0">inner side of right
+            fence</a-plane>
+        <a-plane position="5 0.5 0" color="#643200" scale="10 1 10" rotation="0 90 0">outer side of right
+            fence</a-plane>
+        <a-plane position="-5 0.5 0" color="#643200" scale="10 1 10" rotation="0 90 0">inner side of left
+            fence</a-plane>
+        <a-plane position="-5 0.5 0" color="#643200" scale="10 1 10" rotation="0 -90 0">outer side of left
+            fence</a-plane>
+        <a-plane position="0 0.5 5" color="#643200" scale="10 1 10" rotation="0 180 0">inner side of back
+            fence</a-plane>
+        <a-plane position="0 0.5 5" color="#643200" scale="10 1 10" rotation="0 0 0">outer side of back fence</a-plane>
+        <a-plane position="2.5 1 -3" rotation="0 0 0" width="1" height="1" color="#faaf52"></a-plane>
+        <a-text value="WEIRD PROJECT 101" position="2.1 1 -3" rotation="0 0 0" width="2" color="black"></a-text>
+        <a-gltf-model position="0 0 -3" rotation="0 100 0" src="./Assets/scene.glb">sheep</a-gltf-model>
+    </a-scene>
+</body>
+
+</html>
